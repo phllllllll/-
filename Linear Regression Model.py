@@ -17,9 +17,9 @@ def Test(All_class_vec, Clicked_num):
     index = []
     for i in range(0, 90):
         index.append(i)
-    dic = sorted((dict(zip(sum(w.detach().numpy().tolist(), []), index))).items(), key=lambda x: x[0], reverse=True)
     All_success_clicked = 0
     All_clicked = 0
+    dic = sorted(dict(zip(sum(w.detach().numpy().tolist(), []), index)).items(), key=lambda x: x[0], reverse=True)
     for i in range(0, 5):
         Class_vec = All_class_vec[i]
         Success_clicked = []
@@ -86,5 +86,5 @@ def main():
     for i in range(0, 5):
         file_name = '.\课程' + dic[i] + '.csv'
         All_class_vec.append(Create_student_ad(file_name))
-    print(Test(All_class_vec, Clicked_num))
+    print("ave E = {}".format(Test(All_class_vec, Clicked_num)))
 main()
