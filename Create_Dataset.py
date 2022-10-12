@@ -14,7 +14,7 @@ class Create_data():
         age = []
         grade = []
         for i in range(90):
-            grade.append(random.uniform(2, 4))
+            grade.append(round(random.uniform(2, 4), 4))
             age.append(random.choice(range(20,23)))
         grade.sort()
         grade.reverse()
